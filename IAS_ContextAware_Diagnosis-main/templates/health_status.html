@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% block title %}Usage{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row" style="padding-top:60px">
+        <h1 class="display-5">Health Status of Washing Machine</h1>
+        <div class="col-md-8">
+            <p style="text-align:justify">Get detailed information of your washing machine here.
+                Here is an overview of your washing machine. Get your predictive maintenance to avoide down time and heavy cost repairs.</p>
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px; padding-left:10px">
+        <div class="col-md-4">
+            <h1 class="display-8">Future prediction visualization and analysis:</h1>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <script>
+     $(function(){
+     $("#Acclerometer").load("static/css/Accelerometer.html"); 
+     });
+    </script>
+    <div class="row" style="padding-top:20px; padding-left:10px">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div id="Acclerometer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="overflow: auto; max-height: 300px;">
+            {% for v in hc %}
+            {% for key1, value1 in v.items() %}
+                {% if key1 == "AccPrediction" %}
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title"> Prediction for your Wash Machine based on past Accelerometer readings:</h4>
+                                <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Average Predicted Accelerometer Value: {{ value1 }}</li>
+                                {% for key2, value2 in v.items() %}
+                                    {% if key2 == "AvgLoad" %}
+                                    <li class="list-group-item">Average Load of Previous Spins: {{ value2 }} kg</li>
+                                    {% for key3, value3 in v.items() %}
+                                    {% if key3 == "Message" %}
+                                    <li class="list-group-item">{{ key3 }} : {{ value3 }}</li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px; padding-left:10px">
+        <div class="col-md-4">
+                <div class="card h-100">
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+                    </script>
+                    <script>
+                     $(function(){
+                     $("#Noise").load("static/css/Noise.html"); 
+                     });
+                    </script>
+                <div id="Noise"></div>
+                </div>
+        </div>
+        <div class="col-md-4" style="overflow: auto; max-height: 270px;">
+            {% for v in hc %}
+            {% for key1, value1 in v.items() %}
+                {% if key1 == "NoisePrediction" %}
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title"> Prediction for your Wash Machine based on past Noise readings:</h4>
+                                <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Average Predicted Noise Value: {{ value1 }} dB</li>
+                                {% for key2, value2 in v.items() %}
+                                    {% if key2 == "AvgLoad" %}
+                                    <li class="list-group-item">Average Load of Previous Spins: {{ value2 }} kg</li>
+                                    {% for key3, value3 in v.items() %}
+                                    {% if key3 == "Message" %}
+                                    <li class="list-group-item">{{ key3 }} : {{ value3 }}</li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row" style="padding-top:20px; padding-left:10px">
+        <div class="col-md-4">
+                <div class="card h-100">
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+                    </script>
+                    <script>
+                     $(function(){
+                     $("#Humidity").load("static/css/Humidity.html"); 
+                     });
+                    </script>
+                <div id="Humidity"></div>
+                </div>
+        </div>
+        <div class="col-md-4" style="overflow: auto; max-height: 250px;">
+            {% for v in hc %}
+            {% for key1, value1 in v.items() %}
+                {% if key1 == "HumPrediction" %}
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title"> Prediction for your Wash Machine based on past Humidity readings:</h4>
+                                <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Average Predicted Humidity Value: {{ value1 }}</li>
+                                {% for key2, value2 in v.items() %}
+                                    {% if key2 == "Message" %}
+                                    <li class="list-group-item">{{ key2 }} : {{ value2 }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

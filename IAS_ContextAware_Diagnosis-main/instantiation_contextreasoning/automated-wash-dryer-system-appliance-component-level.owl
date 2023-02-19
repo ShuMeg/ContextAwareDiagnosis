@@ -1,0 +1,239 @@
+@prefix : <http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_low_level#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level> .
+
+<http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#affectsContext
+:affectsContext rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Device
+:Device rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Door
+:Door rdf:type owl:Class ;
+      rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Drain_pipe
+:Drain_pipe rdf:type owl:Class ;
+            rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Drum
+:Drum rdf:type owl:Class ;
+      rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Fan
+:Fan rdf:type owl:Class ;
+     rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Heating_elements
+:Heating_elements rdf:type owl:Class ;
+                  rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Motor
+:Motor rdf:type owl:Class ;
+       rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Paddles
+:Paddles rdf:type owl:Class ;
+         rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Printed_Control_Board
+:Printed_Control_Board rdf:type owl:Class ;
+                       rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Timer
+:Timer rdf:type owl:Class ;
+       rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Water_Inlet_valve
+:Water_Inlet_valve rdf:type owl:Class ;
+                   rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Water_pump
+:Water_pump rdf:type owl:Class ;
+            rdfs:subClassOf :Device .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#Pressure
+:Pressure rdf:type owl:NamedIndividual ,
+                   :Door .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#door_lock
+:door_lock rdf:type owl:NamedIndividual ,
+                    :Door .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#drain_process
+:drain_process rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#drum_speed
+:drum_speed rdf:type owl:NamedIndividual ,
+                     :Drum ,
+                     :Motor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#dry_process
+:dry_process rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#entrance_water_flow
+:entrance_water_flow rdf:type owl:NamedIndividual ,
+                              :Water_Inlet_valve .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#exit_water_flow
+:exit_water_flow rdf:type owl:NamedIndividual ,
+                          :Drain_pipe ,
+                          :Water_pump .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#ext_humidity
+:ext_humidity rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#ext_noise
+:ext_noise rdf:type owl:NamedIndividual ,
+                    :Drum ,
+                    :Fan ,
+                    :Motor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#ext_pressure
+:ext_pressure rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#ext_temperature
+:ext_temperature rdf:type owl:NamedIndividual ,
+                          :Heating_elements ,
+                          :Printed_Control_Board .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#ext_vibrations
+:ext_vibrations rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#internal_temperature
+:internal_temperature rdf:type owl:NamedIndividual ,
+                               :Heating_elements ,
+                               :Printed_Control_Board .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#laundry_fill_level
+:laundry_fill_level rdf:type owl:NamedIndividual ,
+                             :Paddles .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#loading_weight
+:loading_weight rdf:type owl:NamedIndividual ,
+                         :Paddles .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#loudness
+:loudness rdf:type owl:NamedIndividual ,
+                   :Drum ,
+                   :Fan ,
+                   :Motor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#mass_air_flow
+:mass_air_flow rdf:type owl:NamedIndividual ,
+                        :Fan .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#optimal_frequency
+:optimal_frequency rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#optimal_mode
+:optimal_mode rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#optimal_wash_powder_type
+:optimal_wash_powder_type rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#optimal_weight
+:optimal_weight rdf:type owl:NamedIndividual ,
+                         :Drum .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#rinse_process
+:rinse_process rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#spin_process
+:spin_process rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#usage_frequency
+:usage_frequency rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#used_modes
+:used_modes rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#vibration
+:vibration rdf:type owl:NamedIndividual ,
+                    :Drum ,
+                    :Fan ,
+                    :Motor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#wash_powder_fill_level
+:wash_powder_fill_level rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#wash_powder_type
+:wash_powder_type rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#wash_process
+:wash_process rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#water_fill_level
+:water_fill_level rdf:type owl:NamedIndividual ,
+                           :Drain_pipe ,
+                           :Paddles ,
+                           :Water_Inlet_valve ,
+                           :Water_pump .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/automated_wash-dry-system_appliance_component_level#water_hardness
+:water_hardness rdf:type owl:NamedIndividual ,
+                         :Water_Inlet_valve .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

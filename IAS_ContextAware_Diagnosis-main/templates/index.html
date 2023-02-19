@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block content %}
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="static/css/washing-machine-img.png" class="d-block mx-lg-auto img-fluid" alt="Image" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Automatic Wash-Dryer System</h1>
+            <p class="lead">Welcome to the homepage of Automatic Wash-Dryer System! Here you can view the status of your washing machine's
+            components, find out how to optimize your machine usage, and see the structure of the system's data. </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <!-- TODO -->
+                <a href=diagnosis_result ><button type="button" class="btn btn-outline-secondary btn-md px-4">View Diagnosis</button></a>
+                <a href=usage><button type="button" class="btn btn-outline-secondary btn-md px-4">Usage Optimization</button></a>
+                <a href=context_model ><button type="button" class="btn btn-outline-secondary btn-md px-4">View Context Model</button></a>
+            </div>
+            <p class="fw-light fst-italic">*Reload this page to get the latest data.</p>
+          </div>
+        </div>
+    </div>
+{% endblock %}

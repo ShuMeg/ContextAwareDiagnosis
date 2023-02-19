@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% block title %}Health Check Result{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block content %}
+    <style>
+        .element {
+            position:absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+    }
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <div class="row" style="padding-top:60px">
+            <h1 class="display-5">Health Check Result</h1>
+        </div>
+   
+        <div class="row" style="padding-top:60px">
+            {% for a in acc %}
+                {% for key1, value1 in a.items() %}
+                    {% if key1 == "Spin" %}
+                        <div class="col mx-auto" >
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title"> Analysis for {{ value1 }}</h4>
+                                    <ul class="list-group list-group-flush">
+                                    {% for key2, value2 in a.items() %}
+                                        {% if key2 == "State" %}
+                                        {% for e in value2 %}
+                                        {% for key, valuea in e.items() %}
+                                        {% if key == "name" %}
+                                        <li class="list-group-item">{{ key2 }} : {{ valuea }}</li>
+                                        {% for key3, value3 in a.items() %}
+                                        {% if key3 == "Load" %}
+                                        {% for f in value3 %}
+                                        {% for key, valueb in f.items() %}
+                                        {% if key == "name" %}
+                                        <li class="list-group-item">{{ key3 }} : {{ valueb }}</li>
+                                        {% for key4, value4 in a.items() %}
+                                        {% if key4 == "Weight" %}
+                                        <li class="list-group-item">{{ key4 }} : {{ value4 }}kg</li>
+                                        {% for key5, value5 in a.items() %}
+                                        {% if key5 == "Message" %}
+                                        <li class="list-group-item">{{ key5 }} : {{ value5 }}</li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for n in noise %}
+                {% for key1, value1 in n.items() %}
+                    {% if key1 == "Spin" %}
+                        <div class="col mx-auto" >
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                    {% for key2, value2 in n.items() %}
+                                    {% if key2 == "State" %}
+                                    {% for e in value2 %}
+                                    {% for key, valuea in e.items() %}
+                                    {% if key == "name" %}
+                                    {% for key5, value5 in n.items() %}
+                                    {% if key5 == "Message" %}
+                                    <li class="list-group-item">{{ key2 }} : {{ valuea }}</li>
+                                    <li class="list-group-item">{{ key5 }} : {{ value5 }}</li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for h in hum %}
+                {% for key1, value1 in h.items() %}
+                    {% if key1 == "Spin" %}
+                        <div class="col mx-auto" >
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                    {% for key2, value2 in h.items() %}
+                                        {% if key2 == "State" %}
+                                        {% for e in value2 %}
+                                        {% for key, valuea in e.items() %}
+                                        {% if key == "name" %}
+                                        {% for key3, value3 in h.items() %}
+                                        {% if key3 == "Message" %}
+                                        <li class="list-group-item">{{ key2 }} : {{ valuea }}</li>
+                                        <li class="list-group-item">{{ key3 }} : {{ value3 }}</li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for d in duration %}
+                {% for key1, value1 in d.items() %}
+                    {% if key1 == "Spin" %}
+                        <div class="col mx-auto" >
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                    {% for key2, value2 in d.items() %}
+                                        {% if key2 == "Expected_Duration" %}
+                                        {% for key3, value3 in d.items() %}
+                                        {% if key3 == "Actual_Duration" %}
+                                        {% for key4, value4 in d.items() %}
+                                        {% if key4 == "State" %}
+                                        {% for e in value4 %}
+                                        {% for key, valuea in e.items() %}
+                                        {% if key == "name" %}
+                                        {% for key5, value5 in d.items() %}
+                                        {% if key5 == "Message" %}
+                                        <li class="list-group-item">{{ key2 }} : {{ value2 }} mins</li>
+                                        <li class="list-group-item">{{ key3 }} : {{ value3 }} mins</li>
+                                        <li class="list-group-item"> State : {{ valuea }}</li>
+                                        <li class="list-group-item">{{ key5 }} : {{ value5 }}</li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

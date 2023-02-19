@@ -1,0 +1,547 @@
+@prefix : <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology> .
+
+<http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#accomplishes
+:accomplishes rdf:type owl:ObjectProperty ;
+              rdfs:domain :Functions ;
+              rdfs:range :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#affects
+:affects rdf:type owl:ObjectProperty ;
+         rdfs:domain :Context ;
+         rdfs:range :States .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#gets_data_from
+:gets_data_from rdf:type owl:ObjectProperty ;
+                rdfs:domain :Context ;
+                rdfs:range :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#gets_external_data_from
+:gets_external_data_from rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :gets_data_from ;
+                         rdfs:domain :External ;
+                         rdfs:range :Enviroment .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#gets_internal_data_from
+:gets_internal_data_from rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :gets_data_from ;
+                         rdfs:domain :Internal ;
+                         rdfs:range :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#has_actuator_type
+:has_actuator_type rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Actuating ;
+                   rdfs:range :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#has_function
+:has_function rdf:type owl:ObjectProperty ;
+              rdfs:domain :Devices ;
+              rdfs:range :Functions .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#has_sensor_type
+:has_sensor_type rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Sensing ;
+                 rdfs:range :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#has_state
+:has_state rdf:type owl:ObjectProperty ;
+           rdfs:domain :Devices ;
+           rdfs:range :States .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#yields
+:yields rdf:type owl:ObjectProperty ;
+        rdfs:domain :Functions ;
+        rdfs:range :Context .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Actuating
+:Actuating rdf:type owl:Class ;
+           rdfs:subClassOf :Functions .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Actuator
+:Actuator rdf:type owl:Class ;
+          rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Appliance
+:Appliance rdf:type owl:Class ;
+           rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Communication
+:Communication rdf:type owl:Class ;
+               rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Context
+:Context rdf:type owl:Class ;
+         rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Control
+:Control rdf:type owl:Class ;
+         rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Devices
+:Devices rdf:type owl:Class ;
+         rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Enviroment
+:Enviroment rdf:type owl:Class ;
+            rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Functions .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#External
+:External rdf:type owl:Class ;
+          rdfs:subClassOf :Context ;
+          owl:disjointWith :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#External_sensors
+:External_sensors rdf:type owl:Class ;
+                  rdfs:subClassOf :Enviroment .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Flow-Level
+:Flow-Level rdf:type owl:Class ;
+            rdfs:subClassOf :States .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Functions
+:Functions rdf:type owl:Class ;
+           rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Inferred
+:Inferred rdf:type owl:Class ;
+          rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Internal
+:Internal rdf:type owl:Class ;
+          rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Multi-Level
+:Multi-Level rdf:type owl:Class ;
+             rdfs:subClassOf :States .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Sensing
+:Sensing rdf:type owl:Class ;
+         rdfs:subClassOf :Functions .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#States
+:States rdf:type owl:Class ;
+        rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#System
+:System rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Tasks
+:Tasks rdf:type owl:Class ;
+       rdfs:subClassOf :System .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#On/Off
+<http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#On/Off> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :States .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Open/Close
+<http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Open/Close> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf :States .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Close
+:Close rdf:type owl:NamedIndividual ,
+                <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Open/Close> .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Detect_Abnormality
+:Detect_Abnormality rdf:type owl:NamedIndividual ,
+                             :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Device_PCB
+:Device_PCB rdf:type owl:NamedIndividual ,
+                     :Control .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Drying
+:Drying rdf:type owl:NamedIndividual ,
+                 :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Flow_ok
+:Flow_ok rdf:type owl:NamedIndividual ,
+                  :Flow-Level .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#High
+:High rdf:type owl:NamedIndividual ,
+               :Multi-Level .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Low
+:Low rdf:type owl:NamedIndividual ,
+              :Multi-Level .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#NFC_tag
+:NFC_tag rdf:type owl:NamedIndividual ,
+                  :Communication .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#No_flow
+:No_flow rdf:type owl:NamedIndividual ,
+                  :Flow-Level .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Normal
+:Normal rdf:type owl:NamedIndividual ,
+                 :Multi-Level .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Off
+:Off rdf:type owl:NamedIndividual ,
+              <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#On/Off> .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#On
+:On rdf:type owl:NamedIndividual ,
+             <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#On/Off> .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Open
+:Open rdf:type owl:NamedIndividual ,
+               <http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Open/Close> .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Power_Supply
+:Power_Supply rdf:type owl:NamedIndividual ,
+                       :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Suggest_Maintenance
+:Suggest_Maintenance rdf:type owl:NamedIndividual ,
+                              :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Suggest_Optimal_Usage
+:Suggest_Optimal_Usage rdf:type owl:NamedIndividual ,
+                                :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Washing
+:Washing rdf:type owl:NamedIndividual ,
+                  :Tasks .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#Web_Server
+:Web_Server rdf:type owl:NamedIndividual ,
+                     :Communication .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#blower
+:blower rdf:type owl:NamedIndividual ,
+                 :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#context_reasoning_engine
+:context_reasoning_engine rdf:type owl:NamedIndividual ,
+                                   :Control .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#detect_component_failure
+:detect_component_failure rdf:type owl:NamedIndividual ,
+                                   :Event .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#door_lock
+:door_lock rdf:type owl:NamedIndividual ,
+                    :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#drain_pump
+:drain_pump rdf:type owl:NamedIndividual ,
+                     :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#drum_motor
+:drum_motor rdf:type owl:NamedIndividual ,
+                     :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#drum_speed
+:drum_speed rdf:type owl:NamedIndividual ,
+                     :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#entrance_water_flow
+:entrance_water_flow rdf:type owl:NamedIndividual ,
+                              :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#exit_water_flow
+:exit_water_flow rdf:type owl:NamedIndividual ,
+                          :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_humidity
+:external_humidity rdf:type owl:NamedIndividual ,
+                            :External .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_humidity_sensor
+:external_humidity_sensor rdf:type owl:NamedIndividual ,
+                                   :External_sensors .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_noise
+:external_noise rdf:type owl:NamedIndividual ,
+                         :External .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_noise_sensor
+:external_noise_sensor rdf:type owl:NamedIndividual ,
+                                :External_sensors .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_pressure
+:external_pressure rdf:type owl:NamedIndividual ,
+                            :External .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_pressure_sensor
+:external_pressure_sensor rdf:type owl:NamedIndividual ,
+                                   :External_sensors .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_temperature
+:external_temperature rdf:type owl:NamedIndividual ,
+                               :External .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_temperature_sensor
+:external_temperature_sensor rdf:type owl:NamedIndividual ,
+                                      :External_sensors .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_vibrations
+:external_vibrations rdf:type owl:NamedIndividual ,
+                              :External .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#external_vibrations_sensor
+:external_vibrations_sensor rdf:type owl:NamedIndividual ,
+                                     :External_sensors .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#internal_pressure_sensor
+:internal_pressure_sensor rdf:type owl:NamedIndividual ,
+                                   :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#internal_temperature
+:internal_temperature rdf:type owl:NamedIndividual ,
+                               :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#internal_temperature_sensor
+:internal_temperature_sensor rdf:type owl:NamedIndividual ,
+                                      :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#internal_vibration_sensor
+:internal_vibration_sensor rdf:type owl:NamedIndividual ,
+                                    :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#laundry_fill_level
+:laundry_fill_level rdf:type owl:NamedIndividual ,
+                             :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#laundry_fill_level_sensor
+:laundry_fill_level_sensor rdf:type owl:NamedIndividual ,
+                                    :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#loading_weight
+:loading_weight rdf:type owl:NamedIndividual ,
+                         :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#lock_sensor
+:lock_sensor rdf:type owl:NamedIndividual ,
+                      :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#loudness
+:loudness rdf:type owl:NamedIndividual ,
+                   :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#loudness_sensor
+:loudness_sensor rdf:type owl:NamedIndividual ,
+                          :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#mass_air_flow
+:mass_air_flow rdf:type owl:NamedIndividual ,
+                        :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#mass_air_flow_sensor
+:mass_air_flow_sensor rdf:type owl:NamedIndividual ,
+                               :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#optimal_frequency
+:optimal_frequency rdf:type owl:NamedIndividual ,
+                            :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#optimal_mode
+:optimal_mode rdf:type owl:NamedIndividual ,
+                       :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#optimal_washing_powder_type
+:optimal_washing_powder_type rdf:type owl:NamedIndividual ,
+                                      :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#optimal_weight
+:optimal_weight rdf:type owl:NamedIndividual ,
+                         :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#pressure
+:pressure rdf:type owl:NamedIndividual ,
+                   :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#process
+:process rdf:type owl:NamedIndividual ,
+                  :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#speed_sensor
+:speed_sensor rdf:type owl:NamedIndividual ,
+                       :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#usage_frequency
+:usage_frequency rdf:type owl:NamedIndividual ,
+                          :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#used_modes
+:used_modes rdf:type owl:NamedIndividual ,
+                     :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#vibration
+:vibration rdf:type owl:NamedIndividual ,
+                    :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#washing_powder_fill_level
+:washing_powder_fill_level rdf:type owl:NamedIndividual ,
+                                    :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#washing_powder_fill_level_sensor
+:washing_powder_fill_level_sensor rdf:type owl:NamedIndividual ,
+                                           :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#washing_powder_type
+:washing_powder_type rdf:type owl:NamedIndividual ,
+                              :Inferred .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#water_fill_level
+:water_fill_level rdf:type owl:NamedIndividual ,
+                           :Internal .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#water_flow_sensor
+:water_flow_sensor rdf:type owl:NamedIndividual ,
+                            :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#water_inlet_valve
+:water_inlet_valve rdf:type owl:NamedIndividual ,
+                            :Actuator .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#water_level_sensor
+:water_level_sensor rdf:type owl:NamedIndividual ,
+                             :Sensor .
+
+
+###  http://www.semanticweb.org/meghn/ontologies/2022/8/wash-dry-system-top-ontology#weight_sensor
+:weight_sensor rdf:type owl:NamedIndividual ,
+                        :Sensor .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Actuating
+                :Event
+                :Sensing
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

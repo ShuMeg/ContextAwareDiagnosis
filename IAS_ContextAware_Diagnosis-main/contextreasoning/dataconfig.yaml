@@ -1,0 +1,141 @@
+contextdata:
+    soak_process:
+        Door Lock Program:
+            Lock: True                      #True/False
+            Pressure: normal                #normal/toolow
+        Drum Motor Program:
+            Loudness: normal               #normal/toohigh
+            Rotation_Speed: normal         #normal/toohigh/toolow
+            Vibration: normal               #normal/toohigh
+        Fan Program:
+            Loudness: toohigh               #normal/toohigh
+            Mass_Air_Flow: normal           #normal/toolow
+            Vibration: toohigh              #normal/toohigh
+        Pump Out Program:
+            Exit_Water_Flow: True          #True/False
+            Water_Level: low            #low/toohigh
+        Water Inlet Program:
+            Entrance_Water_Flow: True      #True/False
+            Water_Hardness: normal         #normal/toohigh
+            Water_Level: normal             #normal/toolow
+        Long Time Check:
+            Laundry_Fill_Level: normal      #normal/toohigh/toolow
+            Laundry_Weight: normal          #normal/toohigh
+            Washing_Powder_Fill_Level: normal     #normal/high/low
+            Water_Hardness: normal
+            Temperature: normal               #normal/high/low
+            Usage_Frequency: normal
+            Used_Modes: normal
+            Washing_Powder: normal
+    wash_process:
+        Door Lock Program:
+            Lock: True                      #True/False
+            Pressure: normal                #normal/toolow
+        Drum Motor Program:
+            Loudness: normal               #normal/toohigh
+            Rotation_Speed: normal         #normal/toohigh/toolow
+            Vibration: normal               #normal/toohigh
+        Fan Program:
+            Loudness: toohigh               #normal/toohigh
+            Mass_Air_Flow: normal           #normal/toolow
+            Vibration: toohigh              #normal/toohigh
+        Pump Out Program:
+            Exit_Water_Flow: True          #True/False
+            Water_Level: low            #low/toohigh
+        Water Inlet Program:
+            Entrance_Water_Flow: True      #True/False
+            Water_Hardness: normal         #normal/toohigh
+            Water_Level: normal             #normal/toolow
+        Long Time Check:
+            Laundry_Fill_Level: normal      #normal/toohigh/toolow
+            Laundry_Weight: normal          #normal/toohigh
+            Washing_Powder_Fill_Level: normal     #normal/high/low
+            Water_Hardness: normal
+            Temperature: normal               #normal/high/low
+            Usage_Frequency: normal
+            Used_Modes: normal
+            Washing_Powder: normal
+    rinse_process:
+        Door Lock Program:
+            Lock: True                      #True/False
+            Pressure: normal                #normal/toolow
+        Drum Motor Program:
+            Loudness: normal               #normal/toohigh
+            Rotation_Speed: normal         #normal/toohigh/toolow
+            Vibration: normal               #normal/toohigh
+        Fan Program:
+            Loudness: toohigh               #normal/toohigh
+            Mass_Air_Flow: normal           #normal/toolow
+            Vibration: toohigh              #normal/toohigh
+        Pump Out Program:
+            Exit_Water_Flow: True          #True/False
+            Water_Level: low            #low/toohigh
+        Water Inlet Program:
+            Entrance_Water_Flow: True      #True/False
+            Water_Hardness: normal         #normal/toohigh
+            Water_Level: normal             #normal/toolow
+        Long Time Check:
+            Laundry_Fill_Level: normal      #normal/toohigh/toolow
+            Laundry_Weight: normal          #normal/toohigh
+            Washing_Powder_Fill_Level: normal     #normal/high/low
+            Water_Hardness: normal
+            Temperature: normal               #normal/high/low
+            Usage_Frequency: normal
+            Used_Modes: normal
+            Washing_Powder: normal
+    spin_process:
+        Door Lock Program:
+            Lock: True                      #True/False
+            Pressure: normal                #normal/toolow
+        Drum Motor Program:
+            Loudness: normal               #normal/toohigh
+            Rotation_Speed: normal         #normal/toohigh/toolow
+            Vibration: normal               #normal/toohigh
+        Fan Program:
+            Loudness: toohigh               #normal/toohigh
+            Mass_Air_Flow: normal           #normal/toolow
+            Vibration: toohigh              #normal/toohigh
+        Pump Out Program:
+            Exit_Water_Flow: True          #True/False
+            Water_Level: low            #low/toohigh
+        Water Inlet Program:
+            Entrance_Water_Flow: True      #True/False
+            Water_Hardness: normal         #normal/toohigh
+            Water_Level: normal             #normal/toolow
+        Long Time Check:
+            Laundry_Fill_Level: normal      #normal/toohigh/toolow
+            Laundry_Weight: normal          #normal/toohigh
+            Washing_Powder_Fill_Level: normal     #normal/high/low
+            Water_Hardness: normal
+            Temperature: normal               #normal/high/low
+            Usage_Frequency: normal
+            Used_Modes: normal
+            Washing_Powder: normal
+    drain_process:
+        Door Lock Program:
+            Lock: True                      #True/False
+            Pressure: normal                #normal/toolow
+        Drum Motor Program:
+            Loudness: normal               #normal/toohigh
+            Rotation_Speed: normal         #normal/toohigh/toolow
+            Vibration: normal               #normal/toohigh
+        Fan Program:
+            Loudness: toohigh               #normal/toohigh
+            Mass_Air_Flow: normal           #normal/toolow
+            Vibration: toohigh              #normal/toohigh
+        Pump Out Program:
+            Exit_Water_Flow: True          #True/False
+            Water_Level: low            #low/toohigh
+        Water Inlet Program:
+            Entrance_Water_Flow: True      #True/False
+            Water_Hardness: normal         #normal/toohigh
+            Water_Level: normal             #normal/toolow
+        Long Time Check:
+            Laundry_Fill_Level: normal      #normal/toohigh/toolow
+            Laundry_Weight: normal          #normal/toohigh
+            Washing_Powder_Fill_Level: normal     #normal/high/low
+            Water_Hardness: normal
+            Temperature: normal               #normal/high/low
+            Usage_Frequency: normal
+            Used_Modes: normal
+            Washing_Powder: normal
